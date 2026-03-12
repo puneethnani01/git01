@@ -1,0 +1,17 @@
+*** Settings ***
+Library    SeleniumLibrary
+
+*** Variables ***
+${URL}        https://demo.nopcommerce.com/
+${BROWSER}    Chrome
+
+*** Test Cases ***
+Login Test
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Click Link    xpath://a[@class="ico-login"]
+    Input Text    id:Email    testuser@gmail.com
+    Input Text    id:Password    Test@123
+    Click Button    xpath://button[@class="button-1 login-button"]
+    Sleep    5
+    Close Browser
