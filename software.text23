@@ -15,3 +15,14 @@ Login Test
     Click Button    xpath://button[@class="button-1 login-button"]
     Sleep    5
     Close Browser
+
+
+
+*** Test Cases ***
+Search Product Test
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Input Text    id:small-searchterms    ${PRODUCT}
+    Click Button    xpath://button[@type="submit"]
+    Sleep    5
+    Close Browser
