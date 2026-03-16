@@ -1,0 +1,28 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Open Chrome Browser
+driver = webdriver.Chrome()
+
+# Open Website
+driver.get("https://demo.nopcommerce.com/login")
+
+# Maximize window
+driver.maximize_window()
+
+# Enter Email
+driver.find_element(By.ID, "Email").send_keys("test@gmail.com")
+
+# Enter Password
+driver.find_element(By.ID, "Password").send_keys("123456")
+
+# Click Login Button
+driver.find_element(By.XPATH, "//button[@class='button-1 login-button']").click()
+
+# Wait 5 seconds
+time.sleep(5)
+
+# Close Browser
+driver.quit()
